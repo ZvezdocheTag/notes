@@ -30,6 +30,15 @@
  Переходим во вкладку Network, включаем иконку видеокамеры (capture screenshot), обновляем страницу и видим стадии загрузки 
  
  [Документация со слайдами](https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading#filmstrip)
+ 
+ 
+ 
+### Оптимизация работы сайта
+
+1.   цитата "И бесплатный совет, который относится уже не к клиентам, а больше к фронту вашего прокси или nginx сервера – статику надо отдавать через nginx. "
+
+[Статья](https://habrahabr.ru/company/oleg-bunin/blog/311464/)
+
 
 
 
