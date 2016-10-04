@@ -39,6 +39,57 @@
 
 [Статья](https://habrahabr.ru/company/oleg-bunin/blog/311464/)
 
+### Сборщики
+
+#### Webpack
+
+Ошибка: 
+
+```
+ERROR in ./~/request/lib/har.js
+Module not found: Error: Cannot resolve module 'fs' in /absolute/path/to/project/node_modules/request/lib
+ @ ./~/request/lib/har.js 3:9-22
+
+ERROR in ./~/request/~/tunnel-agent/index.js
+Module not found: Error: Cannot resolve module 'net' in /absolute/path/to/project/node_modules/request/node_modules/tunnel-agent
+ @ ./~/request/~/tunnel-agent/index.js 3:10-24
+
+ERROR in ./~/request/~/tunnel-agent/index.js
+Module not found: Error: Cannot resolve module 'tls' in /absolute/path/to/project/node_modules/request/node_modules/tunnel-agent
+ @ ./~/request/~/tunnel-agent/index.js 4:10-24
+ ```
+ 
+ Решение:
+ 
+ **webpack.config.js**
+ 
+ ```
+ var path = require('path');
+
+module.exports = {
+  entry: 'index',
+  output: {
+    path: path.join(__dirname, 'scripts'),
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      { test: /\.json$/, loader: 'json-loader' }
+    ]
+  },
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.js']
+  },
+  node: {
+    console: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
+};
+```
+ 
+
 
 
 
