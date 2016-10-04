@@ -88,6 +88,8 @@ module.exports = {
   }
 };
 ```
+
+[Источник](https://github.com/request/request/issues/1529)
  
 
 
