@@ -90,7 +90,29 @@ module.exports = {
 ```
 
 [Источник](https://github.com/request/request/issues/1529)
+
+### JavaScript
  
+Цикл for - in при использование этого метода для перебора свойств объекта нужно добовлять проверку array.hasOwnPropery(i), чтобы исключить появления в результатах свойства добавленного через prototype
+
+Пример:
+
+```js
+
+var man = {
+  hand: 2,
+  leg: 2,
+  head: 1
+}
+
+for(var key in man) {
+  if(man.hasOwnProperty(key)) {
+    console.log(key, ":", man[key]);
+  }
+}
+
+```
+
 
 
 
