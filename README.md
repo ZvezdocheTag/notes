@@ -1,7 +1,4 @@
-# notes
-
 ## Работа с DevTools google chrome
-<hr>
 
 1. Вывод и определение выбранного елемента dom в console
 
@@ -42,7 +39,6 @@
 [Статья](https://habrahabr.ru/company/oleg-bunin/blog/311464/)
 
 ## Сборщики
-<hr>
 
 #### Webpack
 
@@ -121,7 +117,6 @@ Stoyan Stefanov (O’Reilly).
 Стр. 40
 
 ## Email верстка
-<hr>
 
 
 
