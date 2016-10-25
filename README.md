@@ -116,6 +116,20 @@ for(var key in man) {
 Stoyan Stefanov (O’Reilly).
 Стр. 40
 
+#### Добавление "динамических" узлов (элеметнов) в DOM
+
+Стандартный способ:
+```js
+Element.innerHTML = <div>some content</div>
+```
+
+Более оптимальный способ вставки:
+```js
+Element.insertAdjacentHTML('afterbegin', '<div>some content</div>'  )
+```
+
+[Документация](https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentHTML)
+
 ## Email верстка
 
 
