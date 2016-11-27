@@ -35,13 +35,15 @@
 
 7. Поиск обработчиков событий, привязанных к элементу. В результате её выполнения будет выдан массив объектов, содержащий список событий, на которые может реагировать элемент.
 
-```
-  getEventListeners($(‘selector’))
-```
-Для того, чтобы найти обработчик для конкретного события, можно использовать такую конструкцию:
-```
-getEventListeners($(‘selector’)).eventName[0].listener
-```
+    ```
+      getEventListeners($(‘selector’))
+    ```
+    Обработчик для конкретного события:
+    ```
+    getEventListeners($(‘selector’)).eventName[0].listener
+    ```
+    
+[Origin](https://medium.freecodecamp.com/10-tips-to-maximize-your-javascript-debugging-experience-b69a75859329#.pp0h16vp5)
 ## Оптимизация работы сайта
 <hr>
 
