@@ -143,6 +143,52 @@ Element.insertAdjacentHTML('afterbegin', '<div>some content</div>'  )
 
 [Документация](https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentHTML)
 
+### Подготовка собеседование
+### Задачи
+1. Объясните, для чего предназначена и каким образом работает следующая функция:
+  ```js
+  function bind(method, context) {
+      var args = Array.prototype.slice.call(arguments, 2);
+      return function() {
+          var a = args.concat(Array.prototype.slice.call(arguments, 0));
+          return method.apply(context, a);
+      }
+  }
+  ```
+  
+2. Напишите код функции reversePrint(), которая выведет значения переданного ей односвязного списка в обратном порядке (4, 3, 2, 1). Для вывода значений используйте функцию console.log().
+  ```js
+  function reversePrint(linkedList) {
+    // ...
+  }
+
+  var someList = {
+      value: 1,
+      next: {
+          value: 2,
+          next: {
+              value: 3,
+              next: {
+                  value: 4,
+                  next: null
+              }
+          }
+      }
+  };
+
+  reversePrint(someList);
+  ```
+
+### Вопросы
+1.Что такое bubbling и capturing при обработке событий?
+[Ответ]()
+2.Что такое замыкание в JavaScript?
+3.Чем отличаются операторы сравнения "==" и "==="?
+
+### Источники
+[Yandex вакансии](https://yandex.ua/jobs/vacancies/dev)
+
+
 ## Email верстка
 
 
