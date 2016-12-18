@@ -185,6 +185,16 @@ Element.insertAdjacentHTML('afterbegin', '<div>some content</div>'  )
 2.Что такое замыкание в JavaScript?
 3.Чем отличаются операторы сравнения "==" и "==="?
 
+Ответ:
+```js
+123 == "123"; // true
+1 == true; // true
+
+//Сравнение с приведением типов
+123 === "123"; // false
+1 === true;    // false
+```
+
 ### Источники
 [Yandex вакансии](https://yandex.ua/jobs/vacancies/dev)
 
