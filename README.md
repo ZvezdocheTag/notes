@@ -50,7 +50,28 @@
 Цитата "И бесплатный совет, который относится уже не к клиентам, а больше к фронту вашего прокси или nginx сервера – статику надо отдавать через nginx. "
 
 [Статья](https://habrahabr.ru/company/oleg-bunin/blog/311464/)
-
+## Оформление сайта (мета информация и т.д.)
+Open Graph
+```
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Etch Software">
+<meta property="og:url" content="http://etchapps.com">
+<meta property="og:image" content="http://etchapps.com/logo.png">
+<meta property="business:contact_data:street_address" content="18A Ivy Lane">
+<meta property="business:contact_data:locality" content="Canterbury">
+<meta property="business:contact_data:region" content="Kent">
+<meta property="business:contact_data:postal_code" content="CT1 1TU">
+<meta property="business:contact_data:country_name" content="United Kingdom">
+```
+Twitter Card
+```
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@etch">
+<meta name="twitter:title" content="Etch Apps">
+<meta name="twitter:description" content="A small team of designers and developers, who help brands with big ideas.">
+```
 ## Сборщики
 
 #### Webpack
