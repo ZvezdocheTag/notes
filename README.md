@@ -228,6 +228,15 @@ Examples:
 Fetch data from API with redux
 https://stackoverflow.com/questions/39813984/how-to-fetch-data-through-api-in-redux
 
+React-Redux connect explained:
+http://www.sohamkamani.com/blog/2017/03/31/react-redux-connect-explained/
+
+Dummy guide redux and thunk: 
+https://medium.com/@stowball/a-dummys-guide-to-redux-and-thunk-in-react-d8904a7005d3
+
+Connect create-react-app with API:
+https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/
+
 
 
 
