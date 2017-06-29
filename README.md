@@ -222,8 +222,11 @@ Element.insertAdjacentHTML('afterbegin', '<div>some content</div>'  )
 
 ## Email верстка
 
+## React
 
-
+Examples:
+Fetch data from API with redux
+https://stackoverflow.com/questions/39813984/how-to-fetch-data-through-api-in-redux
 
 
 
