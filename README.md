@@ -150,6 +150,27 @@ for(var key in man) {
 Stoyan Stefanov (O’Reilly).
 Стр. 40
 
+Определения `this` происходит в момент вызова функции
+```js
+class Horn {
+  constructor(words) {
+    this.words = words;
+  }
+  makeSound() {
+    return this.words;
+  }
+}
+
+var mc2 = new Horn("don");
+console.log(mc2.makeSound()) // - "don"
+
+// В данной конструкции при вызове функции
+// this будет установлен на глобальны window
+var mc2Update = mc2.makeSound;
+console.log(mc2Update()) // - "undefined"
+
+```
+
 #### Добавление "динамических" узлов (элеметнов) в DOM
 
 Стандартный способ:
