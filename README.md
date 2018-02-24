@@ -259,6 +259,147 @@ Connect create-react-app with API:
 https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/
 
 
+# Заметка по  баг-фиксам верстки
+
+### Баг #1: При hover и изменение opacity прыгает элемент 
+
+ Событие: `hover`; <br>
+ Свойство: `opacity`;
+
+Решение:
+
+    -webkit-backface-visibility: hidden;
+
+### Баг #2: Печатная версия сайта, не отображается цвет или картинка
+
+Описание: При верстке печатной версии страницы встречаются проблемы с отображение картинок заданных через background,
+возможны несколько вариантов решения:
+
+ Задаем блоку content: 
+
+```css
+    background: url('/images/logo.png');
+    
+    @media print {
+      content: url('/images/logo.png');
+    }
+```
+ Актуально для -webkit-:
+
+```css
+     background: url('/images/logo.png');
+     
+     @media print {
+       -webkit-print-color-adjust: exact;
+     }
+```
+
+### Баг #3: Печатная версия сайта, при печати странице отображается лишняя пустая страница
+
+Медиавыражение: `@media print`
+
+Решение 1:
+
+```css
+    html, body {
+        height: auto;
+    }
+ ```
+Решение 2:
+
+ ```css
+    * {
+        page-break-after: avoid;
+        page-break-before: avoid;
+    }
+ ```
+    
+### Баг #4: Телефоны в safari и edge отображаются с подчеркиванием
+
+Есть несколько вариантов убрать автоформатирование телефонных номеров
+
+Вариант 1, убираем глобально на странице:
+
+```html
+    <meta name="format-detection" content="telephone=no">
+ ```
+ 
+ Вариант 2, через CSS:
+ 
+ ```css
+    a[x-apple-data-detectors] {
+     color: inherit !important;
+     text-decoration: none !important;
+     font-size: inherit !important;
+     font-family: inherit !important;
+     font-weight: inherit !important;
+     line-height: inherit !important;
+   }
+   
+   // Убрать у конкретного элемента
+   a[x-apple-data-detectors].class-name
+```
+##### Ссылки
+
+1. [Ответ с stackoverflow](http://stackoverflow.com/questions/3736807/how-do-i-remove-the-blue-styling-of-telephone-numbers-on-iphone-ios)
+
+### Баг #5: При клике на элемент который содержит svg > use, событие не проходит (Edge)
+
+Дата: 13.10.2016; <br>
+Событие: `click`; <br>
+Браузер: `Edge`; 
+
+Пример:
+
+```html
+
+<div class="prvd-star" title="Добавить в закладки">
+ <svg class="svg-star-icon">
+     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svg/icons.svg#svg-icon-star"></use>
+ </svg>
+</div>
+
+```
+```js
+
+$(document).on('click',function(e) {
+ console.log(e.target); // При клике на prvd-star, в консоле мы не увидим наш элемент
+});
+
+```
+
+Решение:
+Добавляем нашему элементу с классом `prvd-star` псевдоэлемент :after или :before, для перекрытия внутри лежащего svg,
+теперь событие будет воспроизводится.
+
+```css
+
+.prvd-star {
+    position: relative;
+}
+.prvd-star:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+```
+
+[Источник: Ответ с stackoverflow](http://stackoverflow.com/questions/35041903/ms-edge-cant-detect-delegated-events-for-use-svg-elements)
+
+
+
+
+
+
+
+
+    
+
+
 
 
 
